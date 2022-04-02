@@ -83,7 +83,10 @@ public class Main {
 				startPattern = gliderPattern();
 			} else if("-2".equals(cmd)) {
 				startPattern = blinkerPattern();
-			} 
+			}
+			else if("-3".equals(cmd)) {
+				startPattern = wiederPattern();
+			}
 		}
 		return startPattern;
 	}
@@ -111,7 +114,17 @@ public class Main {
 		boolean[][] pattern = {{true,true,true}};
 		return pattern;
 	}
-	
+
+	public static boolean[][] wiederPattern() {
+		boolean[][] pattern = new boolean[4][4];
+		//{{false,true,false},{false,false,true},{true,true,true}};
+		pattern[2][1] = true;
+		pattern[1][1] = true;
+		pattern[0][0] = true;
+		pattern[2][2] = true;
+		pattern[3][1] = true;
+		return pattern;
+	}
     /**
      * Factory method for two crossed blinker.
      * @return pattern
